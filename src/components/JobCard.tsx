@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 import { MapPin, Calendar, Clock, Briefcase, Target, Gift, Award } from "lucide-react";
 
 export interface Job {
@@ -68,15 +69,20 @@ export const JobCard = ({ job }: JobCardProps) => {
       
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <div className="flex items-center gap-4 mb-4">
-            <Avatar className="w-16 h-16">
-              <AvatarImage src={job.logo} alt={`${job.company} logo`} />
-              <AvatarFallback className="text-lg">{job.company.charAt(0)}</AvatarFallback>
-            </Avatar>
-            <div>
-              <DialogTitle className="text-2xl">{job.title}</DialogTitle>
-              <p className="text-muted-foreground text-lg">{job.company}</p>
+          <div className="flex items-center justify-between gap-4 mb-4">
+            <div className="flex items-center gap-4">
+              <Avatar className="w-16 h-16">
+                <AvatarImage src={job.logo} alt={`${job.company} logo`} />
+                <AvatarFallback className="text-lg">{job.company.charAt(0)}</AvatarFallback>
+              </Avatar>
+              <div>
+                <DialogTitle className="text-2xl">{job.title}</DialogTitle>
+                <p className="text-muted-foreground text-lg">{job.company}</p>
+              </div>
             </div>
+            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-xl transition-all hover:scale-105">
+              Apply
+            </Button>
           </div>
         </DialogHeader>
         
@@ -165,6 +171,12 @@ export const JobCard = ({ job }: JobCardProps) => {
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div className="flex justify-end pt-4 border-t">
+            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-xl transition-all hover:scale-105">
+              Apply
+            </Button>
           </div>
         </div>
       </DialogContent>
