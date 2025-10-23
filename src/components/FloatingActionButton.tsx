@@ -36,67 +36,49 @@ export const FloatingActionButton = () => {
       {!isExpanded ? (
         <button
           onClick={() => setIsExpanded(true)}
-          className="w-20 h-20 rounded-3xl bg-cyan-400 hover:bg-cyan-500 border-4 border-black shadow-2xl transition-all hover:scale-105 flex items-center justify-center relative overflow-hidden"
-          style={{
-            backgroundImage: 'radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px)',
-            backgroundSize: '8px 8px'
-          }}
+          className="w-16 h-16 rounded-full bg-primary hover:bg-primary/90 border-2 border-border shadow-lg transition-all hover:scale-105 flex items-center justify-center"
         >
-          <div className="absolute inset-0 border-4 border-black rounded-3xl"></div>
-          <Plus className="w-10 h-10 text-black relative z-10" strokeWidth={3} />
+          <Plus className="w-8 h-8 text-primary-foreground" strokeWidth={2} />
         </button>
       ) : (
-        <div 
-          className="w-80 rounded-3xl bg-black border-4 border-black shadow-2xl p-3 space-y-3 animate-scale-in"
-          style={{
-            backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px)',
-            backgroundSize: '4px 4px'
-          }}
-        >
+        <div className="w-80 rounded-2xl bg-card border border-border shadow-xl p-4 space-y-3 animate-in slide-in-from-bottom-2 duration-300">
           <div className="grid grid-cols-2 gap-3">
-            <button
+            <Button
               onClick={handleManual}
-              className="aspect-square rounded-2xl bg-yellow-600 hover:bg-yellow-700 border-2 border-black shadow-lg transition-all hover:scale-105 flex flex-col items-center justify-center gap-2 relative overflow-hidden"
-              style={{
-                backgroundImage: 'radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px)',
-                backgroundSize: '6px 6px'
-              }}
+              variant="secondary"
+              className="aspect-square rounded-xl flex flex-col items-center justify-center gap-2 h-auto p-4"
             >
-              <Sliders className="w-8 h-8 text-black" strokeWidth={2.5} />
-              <span className="text-white font-bold text-lg">Manual</span>
-            </button>
-            
-            <button
+              <Sliders className="w-6 h-6" />
+              <span className="text-sm font-medium">Manual</span>
+            </Button>
+
+            <Button
               onClick={handleAI}
-              className="aspect-square rounded-2xl bg-pink-500 hover:bg-pink-600 border-2 border-black shadow-lg transition-all hover:scale-105 flex flex-col items-center justify-center gap-2 relative overflow-hidden"
-              style={{
-                backgroundImage: 'radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px)',
-                backgroundSize: '6px 6px'
-              }}
+              variant="secondary"
+              className="aspect-square rounded-xl flex flex-col items-center justify-center gap-2 h-auto p-4"
             >
-              <Sparkles className="w-8 h-8 text-white" strokeWidth={2.5} />
-              <span className="text-white font-bold text-lg">AI</span>
-            </button>
+              <Sparkles className="w-6 h-6" />
+              <span className="text-sm font-medium">AI</span>
+            </Button>
           </div>
           
-          <button
+          <Button
             onClick={handleNewList}
-            className="w-full h-28 rounded-2xl bg-cyan-400 hover:bg-cyan-500 border-2 border-black shadow-lg transition-all hover:scale-105 flex flex-col items-center justify-center gap-2 relative overflow-hidden"
-            style={{
-              backgroundImage: 'radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px)',
-              backgroundSize: '6px 6px'
-            }}
+            variant="default"
+            className="w-full h-20 rounded-xl flex items-center justify-center gap-3"
           >
-            <Layers className="w-10 h-10 text-black" strokeWidth={2.5} />
-            <span className="text-white font-bold text-xl">New List</span>
-          </button>
+            <Layers className="w-5 h-5" />
+            <span className="font-medium">New List</span>
+          </Button>
           
-          <button
+          <Button
             onClick={() => setIsExpanded(false)}
-            className="w-full h-20 rounded-2xl bg-black/40 hover:bg-black/60 border-2 border-gray-700 transition-all hover:scale-105 flex items-center justify-center"
+            variant="outline"
+            className="w-full h-12 rounded-xl flex items-center justify-center gap-2"
           >
-            <X className="w-8 h-8 text-gray-400" strokeWidth={2} />
-          </button>
+            <X className="w-4 h-4" />
+            <span className="text-sm">Close</span>
+          </Button>
         </div>
       )}
     </div>
