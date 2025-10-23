@@ -10,7 +10,11 @@ const searchSchema = z.object({
   location: z.string().trim().max(100, { message: "Location must be less than 100 characters" })
 });
 
-export const JobSearchBar = () => {
+interface JobSearchBarProps {
+  onSearch: (query: string, location: string) => void;
+}
+
+export const JobSearchBar = ({ onSearch }: JobSearchBarProps) => {
   const [jobQuery, setJobQuery] = useState("");
   const [location, setLocation] = useState("");
   const { toast } = useToast();
@@ -18,13 +22,13 @@ export const JobSearchBar = () => {
   const handleSearch = () => {
     try {
       const validated = searchSchema.parse({ jobQuery, location });
-      
-      // Handle search logic here
-      console.log("Searching for:", validated);
-      
+
+      // Call the onSearch prop with validated data
+      onSearch(validated.jobQuery, validated.location);
+
       toast({
-        title: "Search initiated",
-        description: `Searching for "${validated.jobQuery || "all jobs"}" in "${validated.location || "all locations"}"`,
+        title: "Search completed",
+        description: `Found jobs for "${validated.jobQuery || "all jobs"}" in "${validated.location || "all locations"}"`,
       });
     } catch (error) {
       if (error instanceof z.ZodError) {

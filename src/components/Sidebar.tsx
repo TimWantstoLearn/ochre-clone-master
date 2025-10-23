@@ -18,14 +18,14 @@ export const Sidebar = () => {
           size="icon"
           className="w-10 h-10 rounded-xl hover:bg-accent/10 transition-all"
         >
-          <Plane className="w-5 h-5" />
+          <Home className="w-5 h-5" />
         </Button>
         <Button
           variant="ghost"
           size="icon"
           className="w-10 h-10 rounded-xl hover:bg-accent/10 transition-all"
         >
-          <Home className="w-5 h-5" />
+          <Plane className="w-5 h-5" />
         </Button>
       </nav>
       
