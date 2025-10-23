@@ -33,7 +33,8 @@ export const mockJobs: Job[] = [
       "Proven track record of delivering scalable web applications",
       "Experience with cloud platforms (AWS, Azure, or GCP)",
       "Strong understanding of software design patterns"
-    ]
+    ],
+    applicationUrl: "https://techcorp.com/careers/senior-software-engineer"
   },
   {
     id: "2",
@@ -67,7 +68,8 @@ export const mockJobs: Job[] = [
       "Strong analytical and problem-solving skills",
       "Proven track record of successful product launches",
       "Bachelor's degree required, MBA preferred"
-    ]
+    ],
+    applicationUrl: "https://innovatelabs.com/careers/product-manager"
   },
   {
     id: "3",
@@ -101,7 +103,8 @@ export const mockJobs: Job[] = [
       "Experience with user research methodologies",
       "Bachelor's degree in Design or related field",
       "Proficiency in Figma, Sketch, or similar tools"
-    ]
+    ],
+    applicationUrl: "https://designstudio.com/careers/ux-designer"
   },
   {
     id: "4",
@@ -135,7 +138,8 @@ export const mockJobs: Job[] = [
       "Proficiency with Kubernetes and Docker",
       "Experience with Infrastructure as Code tools",
       "Bachelor's degree in Computer Science or equivalent"
-    ]
+    ],
+    applicationUrl: "https://cloudtech.com/careers/devops-engineer"
   },
   {
     id: "5",
@@ -169,7 +173,8 @@ export const mockJobs: Job[] = [
       "Strong Python programming skills",
       "Experience with machine learning frameworks",
       "Excellent communication and presentation skills"
-    ]
+    ],
+    applicationUrl: "https://datainsights.com/careers/data-scientist"
   },
   {
     id: "6",
@@ -203,6 +208,7 @@ export const mockJobs: Job[] = [
       "Experience with Google Analytics and SEO tools",
       "Bachelor's degree in Marketing or related field",
       "Strong analytical and communication skills"
-    ]
+    ],
+    applicationUrl: "https://growthco.com/careers/marketing-specialist"
   }
 ];

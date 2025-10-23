@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { MapPin, Calendar, Clock, Briefcase, Target, Gift, Award } from "lucide-react";
+import { MapPin, Calendar, Clock, Briefcase, Target, Gift, Award, ExternalLink } from "lucide-react";
 
 export interface Job {
   id: string;
@@ -20,6 +20,7 @@ export interface Job {
   strengths: string[];
   benefits: string[];
   qualifications: string[];
+  applicationUrl: string;
 }
 
 interface JobCardProps {
@@ -27,6 +28,10 @@ interface JobCardProps {
 }
 
 export const JobCard = ({ job }: JobCardProps) => {
+  const handleApplyClick = () => {
+    window.open(job.applicationUrl, '_blank');
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -80,9 +85,32 @@ export const JobCard = ({ job }: JobCardProps) => {
                 <p className="text-muted-foreground text-lg">{job.company}</p>
               </div>
             </div>
-            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-xl transition-all hover:scale-105">
-              Apply
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-xl transition-all hover:scale-105">
+                  Apply
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-md">
+                <DialogHeader>
+                  <DialogTitle>Apply for this position</DialogTitle>
+                </DialogHeader>
+                <div className="space-y-4">
+                  <p className="text-muted-foreground">
+                    You will be redirected to {job.company}'s website to complete your application.
+                  </p>
+                  <div className="flex gap-3">
+                    <Button
+                      onClick={handleApplyClick}
+                      className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Apply on {job.company}
+                    </Button>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </DialogHeader>
         
@@ -174,9 +202,32 @@ export const JobCard = ({ job }: JobCardProps) => {
           </div>
 
           <div className="flex justify-end pt-4 border-t">
-            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-xl transition-all hover:scale-105">
-              Apply
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-xl transition-all hover:scale-105">
+                  Apply
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-md">
+                <DialogHeader>
+                  <DialogTitle>Apply for this position</DialogTitle>
+                </DialogHeader>
+                <div className="space-y-4">
+                  <p className="text-muted-foreground">
+                    You will be redirected to {job.company}'s website to complete your application.
+                  </p>
+                  <div className="flex gap-3">
+                    <Button
+                      onClick={handleApplyClick}
+                      className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Apply on {job.company}
+                    </Button>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </DialogContent>
