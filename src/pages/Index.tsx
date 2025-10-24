@@ -6,6 +6,7 @@ import { FloatingActionButton } from "@/components/FloatingActionButton";
 import { JobSearchBar } from "@/components/JobSearchBar";
 import { JobCard, Job } from "@/components/JobCard";
 import { mockJobs } from "@/lib/mockJobs";
+import { PageBreadcrumb } from "@/components/Breadcrumb";
 
 const Index = () => {
   const [jobResults, setJobResults] = useState<Job[]>([]);
@@ -26,6 +27,9 @@ const Index = () => {
       <Header />
 
       <main className="ml-16 pt-20">
+        <div className="absolute top-4 left-20 z-50">
+          <PageBreadcrumb />
+        </div>
         <div className="container mx-auto py-12 space-y-12">
           <div className="text-center space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">Find Your Dream Christian Job</h1>
