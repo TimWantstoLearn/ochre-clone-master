@@ -14,10 +14,7 @@ export const EmptyState = () => {
           Be the first to post a job and help others find their dream Christian career.
         </p>
       </div>
-      <Button onClick={handlePostJob} size="lg" className="gap-2">
-        <Plus className="w-4 h-4" />
-        Post a Job
-      </Button>
+      
     </div>
   );
 };
