@@ -9,7 +9,7 @@ import Companies from "./pages/Companies";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
-
+// This is correct
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
