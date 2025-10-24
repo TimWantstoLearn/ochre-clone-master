@@ -1,4 +1,4 @@
-import { Building, Home, Sun, Moon } from "lucide-react";
+import { Plane, Home, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -17,7 +17,6 @@ export const Sidebar = () => {
           variant="ghost"
           size="icon"
           className="w-10 h-10 rounded-xl hover:bg-accent/10 transition-all"
-          onClick={() => window.location.href = '/'}
         >
           <Home className="w-5 h-5" />
         </Button>
@@ -25,9 +24,8 @@ export const Sidebar = () => {
           variant="ghost"
           size="icon"
           className="w-10 h-10 rounded-xl hover:bg-accent/10 transition-all"
-          onClick={() => window.location.href = '/companies'}
         >
-          <Building className="w-5 h-5" />
+          <Plane className="w-5 h-5" />
         </Button>
       </nav>
       
