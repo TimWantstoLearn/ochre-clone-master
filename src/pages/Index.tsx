@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Sidebar } from "@/components/Sidebar";
 import { Header } from "@/components/Header";
-import { EmptyState } from "@/components/EmptyState";
 import { FloatingActionButton } from "@/components/FloatingActionButton";
 import { JobSearchBar } from "@/components/JobSearchBar";
 import { JobCard, Job } from "@/components/JobCard";
@@ -49,9 +48,7 @@ const Index = () => {
                 ))}
               </div>
             </div>
-          ) : (
-            <EmptyState />
-          )}
+          ) : null}
         </div>
       </main>
 
