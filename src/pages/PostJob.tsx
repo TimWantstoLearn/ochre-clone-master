@@ -36,8 +36,8 @@ const PostJob = () => {
     e.preventDefault();
     // In a real app, submit to API
     console.log("Job posted:", formData);
-    // Redirect back to home or show success
-    navigate("/");
+    // Redirect to pricing page
+    navigate("/pricing");
   };
 
   return (
