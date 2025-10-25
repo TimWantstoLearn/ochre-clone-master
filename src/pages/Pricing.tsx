@@ -7,40 +7,58 @@ import { Check } from "lucide-react";
 const Pricing = () => {
   const plans = [
     {
-      name: "Basic",
-      price: "$99",
-      period: "per month",
+      name: "Free",
+      price: "$0",
+      period: "Try us out for free!",
       features: [
-        "Post up to 3 jobs",
-        "Basic job analytics",
-        "Email support",
-        "Standard visibility"
+        "1 Week delay to post up to 3 jobs for free",
+        "Job Posting duration: 7 days",
+        "Search results visibility",
+      ]
+    },
+    {
+      name: "Standard",
+      price: "$99",
+      period: "Pay Once",
+      features: [
+        "Post up to 3 job posts",
+        "Job Posting duration: 30 days",
+        "Job listed on Social Media",
+        "Automated email responses",
+        "Direct Messaging to applicants",
+        "Job distributed to suitable talents"
       ]
     },
     {
       name: "Professional",
-      price: "$299",
-      period: "per month",
+      price: "$199",
+      period: "Pay Once",
       features: [
-        "Post up to 10 jobs",
-        "Advanced analytics",
-        "Priority support",
-        "Featured listings",
-        "Custom branding"
+        "Post up to 6 job posts",
+        "Job Posting duration: 30 days",
+        "Job listed on Social Media",
+        "Automated email responses",
+        "Direct Messaging to applicants",
+        "Job distributed to suitable talents",
+        "Included in Featured Jobs section for 30 days",
+        "Job highlighted in search results"
       ],
       popular: true
     },
     {
-      name: "Enterprise",
-      price: "$599",
-      period: "per month",
+      name: "Partnered Recruiter",
+      price: "Partner with ",
+      period: "Some Recruitment Agency (logo/icon)",
       features: [
-        "Unlimited job posts",
-        "Premium analytics",
+        "Christian recruiting firm",
+        "Work with professional search consultants",
+        "Full-cycle recruiting services",
+        "Access to exclusive talent pool",
+        "Personalized job postings",
+        "Priority support",
         "Dedicated account manager",
         "Top visibility",
-        "API access",
-        "Custom integrations"
+        "Duration of services based on agreement"
       ]
     }
   ];
@@ -63,9 +81,9 @@ const Pricing = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {plans.map((plan, index) => (
-              <Card key={index} className={`relative ${plan.popular ? 'border-primary shadow-lg' : ''}`}>
+              <Card key={index} className={`relative flex flex-col h-full ${plan.popular ? 'border-primary shadow-lg' : ''}`}>
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                     <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
@@ -80,8 +98,8 @@ const Pricing = () => {
                     <span className="text-sm font-normal text-muted-foreground"> {plan.period}</span>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <ul className="space-y-2">
+                <CardContent className="flex flex-col flex-1">
+                  <ul className="space-y-2 flex-1">
                     {plan.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center gap-2">
                         <Check className="w-4 h-4 text-green-500" />
@@ -89,13 +107,15 @@ const Pricing = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button
-                    className="w-full"
-                    variant={plan.popular ? "default" : "outline"}
-                    onClick={handlePostJob}
-                  >
-                    Post a Job
-                  </Button>
+                  <div className="mt-6">
+                    <Button
+                      className="w-full"
+                      variant={plan.popular ? "default" : "outline"}
+                      onClick={handlePostJob}
+                    >
+                      Sign in to Select Package
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
