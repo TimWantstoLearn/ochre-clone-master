@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PageBreadcrumb } from "@/components/Breadcrumb";
 import { useNavigate } from "react-router-dom";
 import postJobContent from "@/content/postJob.json";
 import commonContent from "@/content/common.json";
@@ -47,6 +48,9 @@ const PostJob = () => {
       <Header content={commonContent.header} />
 
       <main className="ml-16 pt-20">
+        <div className="absolute top-4 left-20 z-50">
+          <PageBreadcrumb />
+        </div>
         <div className="container mx-auto py-12 max-w-2xl">
           <Card>
             <CardHeader>
