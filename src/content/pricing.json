@@ -6,44 +6,63 @@
   "popularBadge": "Most Popular",
   "plans": [
     {
-      "name": "Basic",
-      "price": "$99",
-      "period": "per month",
+      "name": "Free",
+      "price": "$0",
+      "period": "Try us out for free!",
       "features": [
-        "Post up to 3 jobs",
-        "Basic job analytics",
-        "Email support",
-        "Standard visibility"
+        "1 Week delay to post up to 3 jobs for free",
+        "Job Posting duration: 7 days",
+        "Search results visibility"
+      ],
+      "popular": false
+    },
+    {
+      "name": "Standard",
+      "price": "$99",
+      "period": "Pay Once",
+      "features": [
+        "Post up to 3 job posts",
+        "Job Posting duration: 30 days",
+        "Job listed on Social Media",
+        "Automated email responses",
+        "Direct Messaging to applicants",
+        "Job distributed to suitable talents"
       ],
       "popular": false
     },
     {
       "name": "Professional",
-      "price": "$299",
-      "period": "per month",
+      "price": "$199",
+      "period": "Pay Once",
       "features": [
-        "Post up to 10 jobs",
-        "Advanced analytics",
-        "Priority support",
-        "Featured listings",
-        "Custom branding"
+        "Post up to 6 job posts",
+        "Job Posting duration: 30 days",
+        "Job listed on Social Media",
+        "Automated email responses",
+        "Direct Messaging to applicants",
+        "Job distributed to suitable talents",
+        "Included in Featured Jobs section for 30 days",
+        "Job highlighted in search results"
       ],
       "popular": true
     },
     {
-      "name": "Enterprise",
-      "price": "$599",
-      "period": "per month",
+      "name": "Partnered Recruiter",
+      "price": "Partner with ",
+      "period": "Some Recruitment Agency (logo/icon)",
       "features": [
-        "Unlimited job posts",
-        "Premium analytics",
+        "Christian recruiting firm",
+        "Work with professional search consultants",
+        "Full-cycle recruiting services",
+        "Access to exclusive talent pool",
+        "Personalized job postings",
+        "Priority support",
         "Dedicated account manager",
         "Top visibility",
-        "API access",
-        "Custom integrations"
+        "Duration of services based on agreement"
       ],
       "popular": false
     }
   ],
-  "buttonText": "Post a Job"
+  "buttonText": "Sign in to Select Package"
 }
