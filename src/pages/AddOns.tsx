@@ -93,7 +93,13 @@ const AddOns = () => {
                       <span className="text-2xl font-bold text-primary">{addOn.price}</span>
                     )}
                   </div>
-                  <p className="text-sm text-muted-foreground">{addOn.description}</p>
+                  <p className={`text-sm text-muted-foreground ${
+                    addOn.name === "Highlight Post" || addOn.name === "Extra Exposure through our Newsletter"
+                      ? "text-center"
+                      : ""
+                  }`}>
+                    {addOn.description}
+                  </p>
                 </CardHeader>
                 <CardContent className="flex flex-col flex-1">
                   {addOn.options ? (
