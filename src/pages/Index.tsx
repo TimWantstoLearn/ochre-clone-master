@@ -6,6 +6,8 @@ import { JobSearchBar } from "@/components/JobSearchBar";
 import { JobCard, Job } from "@/components/JobCard";
 import { mockJobs } from "@/lib/mockJobs";
 import { PageBreadcrumb } from "@/components/Breadcrumb";
+import commonContent from "@/content/common.json";
+import homepageContent from "@/content/homepage.json";
 
 const Index = () => {
   const [jobResults, setJobResults] = useState<Job[]>([]);
