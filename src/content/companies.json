@@ -1,0 +1,14 @@
+{
+  "hero": {
+    "title": "Our Partner Companies",
+    "subtitle": "Discover the companies that post jobs with us"
+  },
+  "companies": [
+    { "name": "TechCorp", "logo": "/placeholder.svg" },
+    { "name": "InnovateLabs", "logo": "/placeholder.svg" },
+    { "name": "DesignStudio", "logo": "/placeholder.svg" },
+    { "name": "CloudTech", "logo": "/placeholder.svg" },
+    { "name": "DataInsights", "logo": "/placeholder.svg" },
+    { "name": "GrowthCo", "logo": "/placeholder.svg" }
+  ]
+}

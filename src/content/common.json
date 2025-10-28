@@ -1,0 +1,68 @@
+{
+  "header": {
+    "postJobButton": "Post a Job"
+  },
+  "sidebar": {
+    "navigation": [
+      {
+        "id": "home",
+        "label": "Home",
+        "path": "/"
+      },
+      {
+        "id": "companies",
+        "label": "Companies",
+        "path": "/companies"
+      }
+    ],
+    "themeToggle": {
+      "lightLabel": "Switch to dark mode",
+      "darkLabel": "Switch to light mode"
+    }
+  },
+  "jobCard": {
+    "applyButton": "Apply",
+    "applyDialog": {
+      "title": "Apply for this position",
+      "descriptionTemplate": "You will be redirected to {company}'s website to complete your application.",
+      "applyButtonTemplate": "Apply on {company}"
+    },
+    "details": {
+      "jobType": "Job Type",
+      "location": "Location",
+      "hours": "Hours",
+      "posted": "Posted"
+    },
+    "sections": {
+      "aboutCompany": "About the Company",
+      "jobDescription": "Job Description",
+      "strengths": "Key Strengths Needed",
+      "benefits": "Benefits",
+      "qualifications": "Basic Qualifications"
+    }
+  },
+  "floatingActionButton": {
+    "manual": {
+      "label": "Manual",
+      "toast": {
+        "title": "Manual Mode",
+        "description": "Opening manual entry..."
+      }
+    },
+    "ai": {
+      "label": "AI",
+      "toast": {
+        "title": "AI Mode",
+        "description": "Opening AI assistant..."
+      }
+    },
+    "newList": {
+      "label": "New List",
+      "toast": {
+        "title": "New List",
+        "description": "Creating new list..."
+      }
+    },
+    "closeButton": "Close"
+  }
+}
