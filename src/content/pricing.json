@@ -1,0 +1,49 @@
+{
+  "hero": {
+    "title": "Choose Your Plan",
+    "subtitle": "Find the perfect plan to post jobs and reach top talent"
+  },
+  "popularBadge": "Most Popular",
+  "plans": [
+    {
+      "name": "Basic",
+      "price": "$99",
+      "period": "per month",
+      "features": [
+        "Post up to 3 jobs",
+        "Basic job analytics",
+        "Email support",
+        "Standard visibility"
+      ],
+      "popular": false
+    },
+    {
+      "name": "Professional",
+      "price": "$299",
+      "period": "per month",
+      "features": [
+        "Post up to 10 jobs",
+        "Advanced analytics",
+        "Priority support",
+        "Featured listings",
+        "Custom branding"
+      ],
+      "popular": true
+    },
+    {
+      "name": "Enterprise",
+      "price": "$599",
+      "period": "per month",
+      "features": [
+        "Unlimited job posts",
+        "Premium analytics",
+        "Dedicated account manager",
+        "Top visibility",
+        "API access",
+        "Custom integrations"
+      ],
+      "popular": false
+    }
+  ],
+  "buttonText": "Post a Job"
+}

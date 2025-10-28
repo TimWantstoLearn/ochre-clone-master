@@ -25,9 +25,30 @@ export interface Job {
 
 interface JobCardProps {
   job: Job;
+  content: {
+    applyButton: string;
+    applyDialog: {
+      title: string;
+      descriptionTemplate: string;
+      applyButtonTemplate: string;
+    };
+    details: {
+      jobType: string;
+      location: string;
+      hours: string;
+      posted: string;
+    };
+    sections: {
+      aboutCompany: string;
+      jobDescription: string;
+      strengths: string;
+      benefits: string;
+      qualifications: string;
+    };
+  };
 }
 
-export const JobCard = ({ job }: JobCardProps) => {
+export const JobCard = ({ job, content }: JobCardProps) => {
   const handleApplyClick = () => {
     window.open(job.applicationUrl, '_blank');
   };
@@ -88,16 +109,16 @@ export const JobCard = ({ job }: JobCardProps) => {
             <Dialog>
               <DialogTrigger asChild>
                 <Button className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-xl transition-all hover:scale-105">
-                  Apply
+                  {content.applyButton}
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-w-md">
                 <DialogHeader>
-                  <DialogTitle>Apply for this position</DialogTitle>
+                  <DialogTitle>{content.applyDialog.title}</DialogTitle>
                 </DialogHeader>
                 <div className="space-y-4">
                   <p className="text-muted-foreground">
-                    You will be redirected to {job.company}'s website to complete your application.
+                    {content.applyDialog.descriptionTemplate.replace("{company}", job.company)}
                   </p>
                   <div className="flex gap-3">
                     <Button
@@ -105,7 +126,7 @@ export const JobCard = ({ job }: JobCardProps) => {
                       className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground"
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
-                      Apply on {job.company}
+                      {content.applyDialog.applyButtonTemplate.replace("{company}", job.company)}
                     </Button>
                   </div>
                 </div>
@@ -119,47 +140,47 @@ export const JobCard = ({ job }: JobCardProps) => {
             <div className="flex items-center gap-2">
               <Briefcase className="w-5 h-5 text-muted-foreground" />
               <div>
-                <p className="text-sm text-muted-foreground">Job Type</p>
+                <p className="text-sm text-muted-foreground">{content.details.jobType}</p>
                 <p className="font-medium">{job.jobType}</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-5 h-5 text-muted-foreground" />
               <div>
-                <p className="text-sm text-muted-foreground">Location</p>
+                <p className="text-sm text-muted-foreground">{content.details.location}</p>
                 <p className="font-medium">{job.location}</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-5 h-5 text-muted-foreground" />
               <div>
-                <p className="text-sm text-muted-foreground">Hours</p>
+                <p className="text-sm text-muted-foreground">{content.details.hours}</p>
                 <p className="font-medium">{job.hours}</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5 text-muted-foreground" />
               <div>
-                <p className="text-sm text-muted-foreground">Posted</p>
+                <p className="text-sm text-muted-foreground">{content.details.posted}</p>
                 <p className="font-medium">{job.datePosted}</p>
               </div>
             </div>
           </div>
 
           <div>
-            <h4 className="font-semibold text-lg mb-2">About the Company</h4>
+            <h4 className="font-semibold text-lg mb-2">{content.sections.aboutCompany}</h4>
             <p className="text-muted-foreground">{job.companyDescription}</p>
           </div>
 
           <div>
-            <h4 className="font-semibold text-lg mb-2">Job Description</h4>
+            <h4 className="font-semibold text-lg mb-2">{content.sections.jobDescription}</h4>
             <p className="text-muted-foreground">{job.description}</p>
           </div>
 
           <div>
             <div className="flex items-center gap-2 mb-3">
               <Target className="w-5 h-5" />
-              <h4 className="font-semibold text-lg">Key Strengths Needed</h4>
+              <h4 className="font-semibold text-lg">{content.sections.strengths}</h4>
             </div>
             <ul className="space-y-2">
               {job.strengths.map((strength, index) => (
@@ -174,7 +195,7 @@ export const JobCard = ({ job }: JobCardProps) => {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <Gift className="w-5 h-5" />
-              <h4 className="font-semibold text-lg">Benefits</h4>
+              <h4 className="font-semibold text-lg">{content.sections.benefits}</h4>
             </div>
             <ul className="space-y-2">
               {job.benefits.map((benefit, index) => (
@@ -189,7 +210,7 @@ export const JobCard = ({ job }: JobCardProps) => {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <Award className="w-5 h-5" />
-              <h4 className="font-semibold text-lg">Basic Qualifications</h4>
+              <h4 className="font-semibold text-lg">{content.sections.qualifications}</h4>
             </div>
             <ul className="space-y-2">
               {job.qualifications.map((qualification, index) => (
@@ -205,16 +226,16 @@ export const JobCard = ({ job }: JobCardProps) => {
             <Dialog>
               <DialogTrigger asChild>
                 <Button className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-xl transition-all hover:scale-105">
-                  Apply
+                  {content.applyButton}
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-w-md">
                 <DialogHeader>
-                  <DialogTitle>Apply for this position</DialogTitle>
+                  <DialogTitle>{content.applyDialog.title}</DialogTitle>
                 </DialogHeader>
                 <div className="space-y-4">
                   <p className="text-muted-foreground">
-                    You will be redirected to {job.company}'s website to complete your application.
+                    {content.applyDialog.descriptionTemplate.replace("{company}", job.company)}
                   </p>
                   <div className="flex gap-3">
                     <Button
@@ -222,7 +243,7 @@ export const JobCard = ({ job }: JobCardProps) => {
                       className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground"
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
-                      Apply on {job.company}
+                      {content.applyDialog.applyButtonTemplate.replace("{company}", job.company)}
                     </Button>
                   </div>
                 </div>
