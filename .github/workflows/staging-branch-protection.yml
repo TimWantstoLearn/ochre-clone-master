@@ -9,6 +9,6 @@ jobs:
       - name: Check for naming convention (chore/*, feat/*, bug/*)
         run: |
           if [[ "${GITHUB_HEAD_REF}" != */* ]]; then
-            echo "Branch name must follow the convention: Example: (chore/*, feat/*, bug/*). use git branch -m old-branch-name new-branch-name"
+            echo "This branch: [${GITHUB_HEAD_REF}] name must follow the convention: Example: (chore/*, feat/*, bug/*). use git branch -m old-branch-name new-branch-name"
             exit 1
           fi
