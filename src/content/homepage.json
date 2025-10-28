@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "title": "Find Your Dream Christian Job",
+    "subtitle": "Search thousands of job listings from top companies"
+  },
+  "jobResults": {
+    "title": "Job Results",
+    "countSuffix": ""
+  },
+  "emptyState": {
+    "title": "No jobs found",
+    "description": "Be the first to post a job and help others find their dream Christian career.",
+    "buttonText": "Post a Job"
+  },
+  "searchBar": {
+    "jobPlaceholder": "Job title, keywords, or company",
+    "locationPlaceholder": "Location",
+    "searchButtonText": "Search",
+    "helperText": "Press Enter or click Search to find jobs",
+    "jobQueryMaxLength": 200,
+    "locationMaxLength": 100,
+    "toasts": {
+      "searchCompleted": {
+        "title": "Search completed",
+        "descriptionTemplate": "Found jobs for \"{query}\" in \"{location}\""
+      },
+      "validationError": {
+        "title": "Validation Error"
+      }
+    },
+    "validation": {
+      "jobQueryMaxError": "Job query must be less than 200 characters",
+      "locationMaxError": "Location must be less than 100 characters"
+    }
+  }
+}

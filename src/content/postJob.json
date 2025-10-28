@@ -1,0 +1,60 @@
+{
+  "pageTitle": "Post a Job",
+  "form": {
+    "fields": {
+      "title": {
+        "label": "Job Title",
+        "id": "title"
+      },
+      "company": {
+        "label": "Company",
+        "id": "company"
+      },
+      "location": {
+        "label": "Location",
+        "id": "location"
+      },
+      "logo": {
+        "label": "Logo URL",
+        "id": "logo"
+      },
+      "tags": {
+        "label": "Tags (comma separated)",
+        "id": "tags"
+      },
+      "description": {
+        "label": "Job Description",
+        "id": "description"
+      },
+      "jobType": {
+        "label": "Job Type",
+        "id": "jobType"
+      },
+      "companyDescription": {
+        "label": "Company Description",
+        "id": "companyDescription"
+      },
+      "hours": {
+        "label": "Hours",
+        "id": "hours"
+      },
+      "strengths": {
+        "label": "Key Strengths Needed (one per line)",
+        "id": "strengths"
+      },
+      "benefits": {
+        "label": "Benefits (one per line)",
+        "id": "benefits"
+      },
+      "qualifications": {
+        "label": "Basic Qualifications (one per line)",
+        "id": "qualifications"
+      },
+      "applicationUrl": {
+        "label": "Application URL",
+        "id": "applicationUrl"
+      }
+    },
+    "submitButton": "Post Job"
+  }
+}

@@ -1,22 +1,33 @@
-import { Map, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
-export const EmptyState = () => {
+interface EmptyStateProps {
+  content: {
+    title: string;
+    description: string;
+    buttonText: string;
+  };
+}
+
+export const EmptyState = ({ content }: EmptyStateProps) => {
+  const navigate = useNavigate();
+
   const handlePostJob = () => {
-    window.location.href = '/pricing';
+    navigate('/pricing');
   };
 
   return (
     <div className="text-center space-y-6 py-12">
       <div className="space-y-2">
-        <h2 className="text-2xl font-semibold text-foreground">No jobs found</h2>
+        <h2 className="text-2xl font-semibold text-foreground">{content.title}</h2>
         <p className="text-muted-foreground max-w-md mx-auto">
-          Be the first to post a job and help others find their dream Christian career.
+          {content.description}
         </p>
       </div>
       <Button onClick={handlePostJob} size="lg" className="gap-2">
         <Plus className="w-4 h-4" />
-        Post a Job
+        {content.buttonText}
       </Button>
     </div>
   );
