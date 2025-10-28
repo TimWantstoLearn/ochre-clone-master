@@ -1,0 +1,37 @@
+{
+  "modal": {
+    "title": "Create Your Employer Account",
+    "description": "Join our Christian job board to post jobs and connect with top talent.",
+    "fields": {
+      "firstName": {
+        "label": "First Name",
+        "placeholder": "Enter your first name"
+      },
+      "lastName": {
+        "label": "Last Name",
+        "placeholder": "Enter your last name"
+      },
+      "workEmail": {
+        "label": "Work Email",
+        "placeholder": "Enter your work email"
+      },
+      "linkedinUrl": {
+        "label": "LinkedIn URL",
+        "placeholder": "https://linkedin.com/in/yourprofile"
+      },
+      "twitterHandle": {
+        "label": "Twitter Handle",
+        "placeholder": "@yourhandle"
+      },
+      "companyName": {
+        "label": "Company Name",
+        "placeholder": "Enter your company name"
+      },
+      "companyUrl": {
+        "label": "Company URL",
+        "placeholder": "https://yourcompany.com"
+      }
+    },
+    "submitButton": "Create Account"
+  }
+}
