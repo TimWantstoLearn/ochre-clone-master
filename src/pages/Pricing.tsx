@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import pricingContent from "@/content/pricing.json";
 import employerSignupContent from "@/content/employerSignup.json";
 import commonContent from "@/content/common.json";
-
+// gello
 const Pricing = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
