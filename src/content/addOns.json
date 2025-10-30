@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "title": "Add-Ons",
+    "subtitle": "Enhance your job posting with these additional features"
+  },
+  "addOns": [
+    {
+      "name": "Highlight Post",
+      "description": "Make your job posting stand out with custom background highlighting and a colorful border.",
+      "price": "$25",
+      "buttonText": "Add to Package"
+    },
+    {
+      "name": "Extra Exposure through our Newsletter",
+      "description": "Get additional inclusion in our weekly newsletter for better exposure.",
+      "price": "$50",
+      "buttonText": "Add to Package"
+    },
+    {
+      "name": "Job Posting Listed in the Featured Section",
+      "description": "Get your job listing highlighted in our Featured Jobs section for maximum visibility.",
+      "options": [
+        { "duration": "1 week", "price": "$50" },
+        { "duration": "2 weeks", "price": "$85" },
+        { "duration": "1 month", "price": "$150" }
+      ],
+      "buttonText": "Add to Package"
+    }
+  ]
+}

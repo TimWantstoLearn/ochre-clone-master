@@ -7,15 +7,21 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Check } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import pricingContent from "@/content/pricing.json";
 import employerSignupContent from "@/content/employerSignup.json";
 import commonContent from "@/content/common.json";
 // gello
 const Pricing = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleSignIn = () => {
     setIsModalOpen(true);
+  };
+
+  const handleCreateAccount = () => {
+    navigate('/add-ons');
   };
 
   return (
@@ -137,8 +143,8 @@ const Pricing = () => {
             </div>
           </div>
           <div className="flex justify-end">
-            <Button onClick={() => setIsModalOpen(false)}>
-              {employerSignupContent.modal.submitButton}
+            <Button onClick={handleCreateAccount}>
+              Create Account
             </Button>
           </div>
         </DialogContent>

@@ -5,7 +5,6 @@ import { FloatingActionButton } from "@/components/FloatingActionButton";
 import { JobSearchBar } from "@/components/JobSearchBar";
 import { JobCard, Job } from "@/components/JobCard";
 import { mockJobs } from "@/lib/mockJobs";
-import { PageBreadcrumb } from "@/components/Breadcrumb";
 import commonContent from "@/content/common.json";
 import homepageContent from "@/content/homepage.json";
 
@@ -27,9 +26,6 @@ const Index = () => {
       <Header content={commonContent.header} />
 
       <main className="ml-16 pt-20">
-        <div className="absolute top-4 left-20 z-50">
-          <PageBreadcrumb />
-        </div>
         <div className="container mx-auto py-12 space-y-12">
           <div className="text-center space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">{homepageContent.hero.title}</h1>
@@ -56,4 +52,5 @@ const Index = () => {
       <FloatingActionButton content={commonContent.floatingActionButton} />
     </div>;
 };
+// Hello
 export default Index;

@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import PostJob from "./pages/PostJob";
 import Companies from "./pages/Companies";
 import Pricing from "./pages/Pricing";
+import AddOns from "./pages/AddOns";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/post-job" element={<PostJob />} />
           <Route path="/companies" element={<Companies />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/add-ons" element={<AddOns />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
