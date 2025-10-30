@@ -14,9 +14,17 @@ export const PageBreadcrumb = () => {
 
     const breadcrumbs = [{ name: 'Home', path: '/', isLast: false }];
 
+    // Map of URL segments to proper display names
+    const pageNames: { [key: string]: string } = {
+      'pricing': 'Pricing',
+      'post-job': 'Post Job',
+      'companies': 'Companies',
+      'add-ons': 'Add-ons'
+    };
+
     pathnames.forEach((pathname, index) => {
       const path = `/${pathnames.slice(0, index + 1).join('/')}`;
-      const name = pathname.charAt(0).toUpperCase() + pathname.slice(1).replace('-', ' ');
+      const name = pageNames[pathname] || (pathname.charAt(0).toUpperCase() + pathname.slice(1).replace('-', ' '));
       breadcrumbs.push({ name, path, isLast: index === pathnames.length - 1 });
     });
 
