@@ -94,7 +94,7 @@ const AddOns = () => {
                     )}
                   </div>
                   <p className={`text-sm text-muted-foreground ${
-                    addOn.name === "Highlight Post" || addOn.name === "Extra Exposure through our Newsletter"
+                    addOn.name === "Highlight Post" || addOn.name === "Exposure on our Newsletter"
                       ? "text-center"
                       : ""
                   }`}>
@@ -160,7 +160,19 @@ const AddOns = () => {
                     )
                   ) : (
                     // Empty space for single-price add-ons (price is in header)
-                    <div className="flex-1"></div>
+                    <div className="flex-1 flex items-center justify-center">
+                      {addOn.name === "Highlight Post" && (
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-muted-foreground">
+                          <polygon points="12,2 15,8 22,9 17,14 18,21 12,18 6,21 7,14 2,9 9,8"/>
+                        </svg>
+                      )}
+                      {addOn.name === "Exposure on our Newsletter" && (
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-muted-foreground">
+                          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                          <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                      )}
+                    </div>
                   )}
                   <div className="mt-6">
                     <Button
