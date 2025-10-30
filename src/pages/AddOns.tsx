@@ -13,7 +13,7 @@ interface SelectedAddOn {
   duration: string;
   price: string;
 }
-
+// test comment
 const AddOns = () => {
   const [selectedOptions, setSelectedOptions] = useState<{ [key: string]: string }>({});
   const [selectedAddOns, setSelectedAddOns] = useState<SelectedAddOn[]>([]);
