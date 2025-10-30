@@ -10,7 +10,7 @@ import { useState } from "react";
 import pricingContent from "@/content/pricing.json";
 import employerSignupContent from "@/content/employerSignup.json";
 import commonContent from "@/content/common.json";
-
+// gello
 const Pricing = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
