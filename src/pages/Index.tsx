@@ -52,4 +52,5 @@ const Index = () => {
       <FloatingActionButton content={commonContent.floatingActionButton} />
     </div>;
 };
+// Hello
 export default Index;
