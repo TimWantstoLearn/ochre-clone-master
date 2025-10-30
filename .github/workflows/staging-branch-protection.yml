@@ -1,0 +1,14 @@
+name: Staging Branch Protection
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  check_name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for naming convention (chore/*, feat/*, bug/*)
+        run: |
+          if [[ "${GITHUB_HEAD_REF}" != */* ]]; then
+            echo "${GITHUB_HEAD_REF}: Branch name must follow the convention: Example: (chore/*, feat/*, bug/*). use git branch -m old-branch-name new-branch-name"
+            exit 1
+          fi

@@ -1,0 +1,68 @@
+{
+  "hero": {
+    "title": "Choose Your Plan",
+    "subtitle": "Find the perfect plan to post jobs and reach top talent"
+  },
+  "popularBadge": "Most Popular",
+  "plans": [
+    {
+      "name": "Free",
+      "price": "$0",
+      "period": "Try us out for free!",
+      "features": [
+        "1 Week delay to post up to 3 jobs for free",
+        "Job Posting duration: 7 days",
+        "Search results visibility"
+      ],
+      "popular": false
+    },
+    {
+      "name": "Standard",
+      "price": "$99",
+      "period": "Pay Once",
+      "features": [
+        "Post up to 3 job posts",
+        "Job Posting duration: 30 days",
+        "Job listed on Social Media",
+        "Automated email responses",
+        "Direct Messaging to applicants",
+        "Job distributed to suitable talents"
+      ],
+      "popular": false
+    },
+    {
+      "name": "Professional",
+      "price": "$199",
+      "period": "Pay Once",
+      "features": [
+        "Post up to 6 job posts",
+        "Job Posting duration: 30 days",
+        "Job listed on Social Media",
+        "Automated email responses",
+        "Direct Messaging to applicants",
+        "Job distributed to suitable talents",
+        "Included in Featured Jobs section for 30 days",
+        "Job highlighted in search results"
+      ],
+      "popular": true
+    },
+    {
+      "name": "Partnered Recruiter",
+      "price": "Partner with ",
+      "period": "Some Recruitment Agency (logo/icon)",
+      "features": [
+        "Christian recruiting firm",
+        "Work with professional search consultants",
+        "Full-cycle recruiting services",
+        "Access to exclusive talent pool",
+        "Personalized job postings",
+        "Priority support",
+        "Dedicated account manager",
+        "Top visibility",
+        "Duration of services based on agreement"
+      ],
+      "popular": false
+    }
+  ],
+  "buttonText": "Sign in to Select Package"
+}

@@ -3,30 +3,57 @@ import { Plus, Sliders, Sparkles, Layers, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 
-export const FloatingActionButton = () => {
+interface FloatingActionButtonProps {
+  content: {
+    manual: {
+      label: string;
+      toast: {
+        title: string;
+        description: string;
+      };
+    };
+    ai: {
+      label: string;
+      toast: {
+        title: string;
+        description: string;
+      };
+    };
+    newList: {
+      label: string;
+      toast: {
+        title: string;
+        description: string;
+      };
+    };
+    closeButton: string;
+  };
+}
+
+export const FloatingActionButton = ({ content }: FloatingActionButtonProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { toast } = useToast();
 
   const handleManual = () => {
     toast({
-      title: "Manual Mode",
-      description: "Opening manual entry...",
+      title: content.manual.toast.title,
+      description: content.manual.toast.description,
     });
     setIsExpanded(false);
   };
 
   const handleAI = () => {
     toast({
-      title: "AI Mode",
-      description: "Opening AI assistant...",
+      title: content.ai.toast.title,
+      description: content.ai.toast.description,
     });
     setIsExpanded(false);
   };
 
   const handleNewList = () => {
     toast({
-      title: "New List",
-      description: "Creating new list...",
+      title: content.newList.toast.title,
+      description: content.newList.toast.description,
     });
     setIsExpanded(false);
   };
@@ -49,7 +76,7 @@ export const FloatingActionButton = () => {
               className="aspect-square rounded-xl flex flex-col items-center justify-center gap-2 h-auto p-4"
             >
               <Sliders className="w-6 h-6" />
-              <span className="text-sm font-medium">Manual</span>
+              <span className="text-sm font-medium">{content.manual.label}</span>
             </Button>
 
             <Button
@@ -58,7 +85,7 @@ export const FloatingActionButton = () => {
               className="aspect-square rounded-xl flex flex-col items-center justify-center gap-2 h-auto p-4"
             >
               <Sparkles className="w-6 h-6" />
-              <span className="text-sm font-medium">AI</span>
+              <span className="text-sm font-medium">{content.ai.label}</span>
             </Button>
           </div>
           
@@ -68,7 +95,7 @@ export const FloatingActionButton = () => {
             className="w-full h-20 rounded-xl flex items-center justify-center gap-3"
           >
             <Layers className="w-5 h-5" />
-            <span className="font-medium">New List</span>
+            <span className="font-medium">{content.newList.label}</span>
           </Button>
           
           <Button
@@ -77,7 +104,7 @@ export const FloatingActionButton = () => {
             className="w-full h-12 rounded-xl flex items-center justify-center gap-2"
           >
             <X className="w-4 h-4" />
-            <span className="text-sm">Close</span>
+            <span className="text-sm">{content.closeButton}</span>
           </Button>
         </div>
       )}
