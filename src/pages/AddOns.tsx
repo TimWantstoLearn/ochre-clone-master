@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import addOnsContent from "@/content/addOns.json";
 import commonContent from "@/content/common.json";
 
@@ -15,6 +16,7 @@ interface SelectedAddOn {
 }
 // test comment
 const AddOns = () => {
+  const navigate = useNavigate();
   const [selectedOptions, setSelectedOptions] = useState<{ [key: string]: string }>({});
   const [selectedAddOns, setSelectedAddOns] = useState<SelectedAddOn[]>([]);
 
@@ -199,8 +201,8 @@ const AddOns = () => {
                       <span className="text-lg font-bold text-primary">${calculateTotal().toFixed(2)}</span>
                     </div>
                     <div className="mt-6">
-                      <Button className="w-full" size="lg">
-                        Continue to Job Form (to be implemented)
+                      <Button className="w-full" size="lg" onClick={() => navigate('/post-job')}>
+                        Continue to Job Form
                       </Button>
                     </div>
                   </div>
