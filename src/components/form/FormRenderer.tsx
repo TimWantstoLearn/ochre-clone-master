@@ -65,11 +65,11 @@ const FormRenderer: React.FC<FormRendererProps> = ({ item, values, onChange }) =
 
   return (
     <div>
-      <div className="max-w-3xl mx-auto mb-8">
-        <h2 className="text-2xl font-semibold text-center mb-6">{item.question}</h2>
+      <div className="max-w-4xl mx-auto mb-6 md:mb-8">
+        <h2 className="text-xl md:text-2xl font-semibold text-center mb-4 md:mb-6">{item.question}</h2>
       </div>
 
-      <div className="max-w-3xl mx-auto flex flex-col gap-3">
+      <div className="max-w-4xl mx-auto flex flex-col gap-3">
         {item.component === 'multiselect' && (
           <>
             {item.options?.map(option => (
