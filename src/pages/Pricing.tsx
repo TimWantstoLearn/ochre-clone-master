@@ -81,7 +81,7 @@ const Pricing = () => {
       </main>
 
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="sm:max-w-[500px]">
+        <DialogContent className="sm:max-w-[400px]">
           <DialogHeader>
             <DialogTitle>{employerSignupContent.modal.title}</DialogTitle>
             <DialogDescription>
@@ -89,22 +89,6 @@ const Pricing = () => {
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="firstName">{employerSignupContent.modal.fields.firstName.label}</Label>
-                <Input
-                  id="firstName"
-                  placeholder={employerSignupContent.modal.fields.firstName.placeholder}
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="lastName">{employerSignupContent.modal.fields.lastName.label}</Label>
-                <Input
-                  id="lastName"
-                  placeholder={employerSignupContent.modal.fields.lastName.placeholder}
-                />
-              </div>
-            </div>
             <div className="space-y-2">
               <Label htmlFor="workEmail">{employerSignupContent.modal.fields.workEmail.label}</Label>
               <Input
@@ -114,31 +98,10 @@ const Pricing = () => {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="linkedinUrl">{employerSignupContent.modal.fields.linkedinUrl.label}</Label>
-              <Input
-                id="linkedinUrl"
-                placeholder={employerSignupContent.modal.fields.linkedinUrl.placeholder}
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="twitterHandle">{employerSignupContent.modal.fields.twitterHandle.label}</Label>
-              <Input
-                id="twitterHandle"
-                placeholder={employerSignupContent.modal.fields.twitterHandle.placeholder}
-              />
-            </div>
-            <div className="space-y-2">
               <Label htmlFor="companyName">{employerSignupContent.modal.fields.companyName.label}</Label>
               <Input
                 id="companyName"
                 placeholder={employerSignupContent.modal.fields.companyName.placeholder}
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="companyUrl">{employerSignupContent.modal.fields.companyUrl.label}</Label>
-              <Input
-                id="companyUrl"
-                placeholder={employerSignupContent.modal.fields.companyUrl.placeholder}
               />
             </div>
           </div>
