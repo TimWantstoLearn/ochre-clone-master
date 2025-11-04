@@ -100,9 +100,10 @@ const JobFormWizard: React.FC<JobFormWizardProps> = ({ filterConfig, onFinish })
   return (
     <div className="flex flex-col h-screen bg-gray-50 text-gray-900 font-sans">
       <div className="flex flex-1 overflow-hidden">
-        <aside className="w-60 bg-white border-r border-gray-300 overflow-y-auto flex-shrink-0">
+        {/* This should be visible Floating sidebar with background */}
+        <aside className="fixed left-20 top-20 z-10 w-60 bg-card/95 backdrop-blur-sm border border-border rounded-lg shadow-lg overflow-y-auto max-h-[calc(100vh-160px)]">
           {filterConfig.sections.map(section => (
-            <div key={section.id} className="border-b border-gray-300">
+            <div key={section.id} className="border-b border-border">
               <div className="flex items-center gap-2 px-5 py-4 cursor-default select-none text-gray-600 font-medium text-sm">
                 <span>{section.icon}</span>
                 <span>{section.title}</span>
@@ -112,7 +113,7 @@ const JobFormWizard: React.FC<JobFormWizardProps> = ({ filterConfig, onFinish })
                   <button
                     key={item.id}
                     className={`text-left px-5 py-2 text-sm transition-colors duration-150 ${
-                      activeItem === item.id ? 'bg-yellow-200 font-semibold border-l-4 border-yellow-400' : 'hover:bg-gray-100'
+                      activeItem === item.id ? 'bg-accent font-semibold border-l-4 border-primary' : 'hover:bg-accent/50'
                     }`}
                     onClick={() => handleItemClick(section.id, item.id)}
                   >
@@ -124,7 +125,7 @@ const JobFormWizard: React.FC<JobFormWizardProps> = ({ filterConfig, onFinish })
           ))}
         </aside>
 
-        <main className="flex-1 overflow-y-auto p-12">
+        <main className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 lg:p-12 bg-background ml-80">
           {currentItem ? (
             <FormRenderer
               item={currentItem}
@@ -132,17 +133,17 @@ const JobFormWizard: React.FC<JobFormWizardProps> = ({ filterConfig, onFinish })
               onChange={handleFormChange}
             />
           ) : (
-            <div className="max-w-3xl mx-auto text-center text-gray-500">Select a filter item to begin</div>
+            <div className="max-w-3xl mx-auto text-center text-muted-foreground">Select a filter item to begin</div>
           )}
         </main>
       </div>
 
-      {/* Fixed bottom navigation with side-by-side centered larger buttons */}
-      <nav className="bg-white border-t border-gray-300 p-6 fixed bottom-0 left-0 right-0 max-w-7xl mx-auto flex justify-center gap-6">
+      {/* Floating bottom navigation with background - positioned relative to form content */}
+      <nav className="fixed bottom-4 z-10 bg-card/95 backdrop-blur-sm border border-border rounded-lg shadow-lg p-4 flex justify-center gap-4 sm:gap-5 md:gap-6" style={{ left: 'calc(80px + 16rem)', right: '1rem', maxWidth: 'calc(100vw - 80px - 16rem - 1rem)' }}>
         <Button
           onClick={goBack}
           disabled={currentIndex <= 0}
-          className={`px-8 py-3 rounded-md text-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed bg-yellow-400 text-gray-900 hover:bg-yellow-500 ${
+          className={`px-6 sm:px-7 md:px-8 py-3 rounded-md text-base sm:text-lg md:text-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
             currentIndex <= 0 ? 'invisible' : 'visible'
           }`}
         >
@@ -151,7 +152,7 @@ const JobFormWizard: React.FC<JobFormWizardProps> = ({ filterConfig, onFinish })
 
         <Button
           onClick={goNext}
-          className="px-8 py-3 rounded-md text-lg font-semibold bg-yellow-400 text-gray-900 hover:bg-yellow-500 transition-colors"
+          className="px-6 sm:px-7 md:px-8 py-3 rounded-md text-base sm:text-lg md:text-lg font-semibold transition-colors"
         >
           {currentIndex === allItems.length - 1 ? 'Finish' : 'Next'}
         </Button>

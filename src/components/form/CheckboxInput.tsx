@@ -14,14 +14,14 @@ interface CheckboxInputProps {
 }
 
 const CheckboxInput: React.FC<CheckboxInputProps> = ({ option, checked, onChange }) => (
-  <div className={`bg-white border rounded-lg overflow-hidden transition-all ${
-    checked ? 'bg-yellow-400 border-yellow-400' : 'border-gray-300 hover:border-gray-400'
+  <div className={`bg-card border rounded-lg overflow-hidden transition-all ${
+    checked ? 'bg-primary border-primary' : 'border-border hover:border-ring'
   }`}>
-    <Label className="flex items-center p-4 cursor-pointer gap-3">
+    <Label className="flex items-center p-3 md:p-4 cursor-pointer gap-3">
       <Checkbox
         checked={checked}
         onCheckedChange={(checked) => onChange(option.value, checked as boolean)}
-        className="w-5 h-5 cursor-pointer accent-gray-900"
+        className="w-5 h-5 cursor-pointer"
       />
       <span className={`flex-1 text-sm select-none ${
         checked ? 'font-medium' : ''
@@ -29,7 +29,7 @@ const CheckboxInput: React.FC<CheckboxInputProps> = ({ option, checked, onChange
         {option.label}
       </span>
       {checked && (
-        <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
         </svg>
       )}

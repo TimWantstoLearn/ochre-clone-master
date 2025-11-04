@@ -13,9 +13,9 @@ interface SelectInputProps {
 }
 
 const SelectInput: React.FC<SelectInputProps> = ({ options, value, onChange }) => (
-  <div className="bg-white border border-gray-300 rounded-lg overflow-hidden hover:border-gray-400 transition-all">
+  <div className="bg-card border border-input rounded-lg overflow-hidden hover:border-ring transition-all">
     <Select value={value} onValueChange={onChange}>
-      <SelectTrigger className="w-full p-4 text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-yellow-400">
+      <SelectTrigger className="w-full p-3 md:p-4 text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring">
         <SelectValue placeholder="Select an option" />
       </SelectTrigger>
       <SelectContent>
