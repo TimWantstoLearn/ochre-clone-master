@@ -1,15 +1,18 @@
 import { Sidebar } from "@/components/Sidebar";
 import { Header } from "@/components/Header";
+import { useIsMobile } from "@/hooks/use-mobile";
 import companiesContent from "@/content/companies.json";
 import commonContent from "@/content/common.json";
 
 const Companies = () => {
+  const isMobile = useIsMobile();
+
   return (
     <div className="min-h-screen bg-background">
-      <Sidebar content={commonContent.sidebar} />
-      <Header content={commonContent.header} />
+      {!isMobile && <Sidebar content={commonContent.sidebar} />}
+      <Header content={commonContent.header} isMobile={isMobile} />
 
-      <main className="ml-16 pt-20">
+      <main className={`${isMobile ? 'pt-20' : 'ml-16 pt-20'}`}>
         <div className="container mx-auto py-12 space-y-12">
           <div className="text-center space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">{companiesContent.hero.title}</h1>
