@@ -29,9 +29,10 @@ interface FloatingActionButtonProps {
     };
     closeButton: string;
   };
+  isMobile?: boolean;
 }
 
-export const FloatingActionButton = ({ content }: FloatingActionButtonProps) => {
+export const FloatingActionButton = ({ content, isMobile }: FloatingActionButtonProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [showPong, setShowPong] = useState(false);
   const { toast } = useToast();
@@ -59,16 +60,16 @@ export const FloatingActionButton = ({ content }: FloatingActionButtonProps) => 
 
   return (
     <>
-      <div className="fixed bottom-4 right-4 z-50">
+      <div className={`fixed bottom-4 ${isMobile ? 'right-4' : 'right-20'} z-50`}>
         {!isExpanded ? (
           <button
             onClick={() => setIsExpanded(true)}
-            className="w-16 h-16 rounded-full bg-primary hover:bg-primary/90 border-2 border-border shadow-lg transition-all hover:scale-105 flex items-center justify-center"
+            className={`${isMobile ? 'w-14 h-14' : 'w-16 h-16'} rounded-full bg-primary hover:bg-primary/90 border-2 border-border shadow-lg transition-all hover:scale-105 flex items-center justify-center`}
           >
-            <Plus className="w-8 h-8 text-primary-foreground" strokeWidth={2} />
+            <Plus className={`${isMobile ? 'w-7 h-7' : 'w-8 h-8'} text-primary-foreground`} strokeWidth={2} />
           </button>
         ) : (
-          <div className="w-80 rounded-2xl bg-card border border-border shadow-xl p-4 space-y-3 animate-in slide-in-from-bottom-2 duration-300">
+          <div className={`${isMobile ? 'w-72' : 'w-80'} rounded-2xl bg-card border border-border shadow-xl p-4 space-y-3 animate-in slide-in-from-bottom-2 duration-300`}>
             <div className="grid grid-cols-2 gap-3">
               <Button
                 onClick={handlePong}
@@ -92,7 +93,7 @@ export const FloatingActionButton = ({ content }: FloatingActionButtonProps) => 
             <Button
               onClick={handleNewList}
               variant="default"
-              className="w-full h-20 rounded-xl flex items-center justify-center gap-3"
+              className={`${isMobile ? 'h-16' : 'h-20'} w-full rounded-xl flex items-center justify-center gap-3`}
             >
               <Layers className="w-5 h-5" />
               <span className="font-medium">{content.newList.label}</span>
