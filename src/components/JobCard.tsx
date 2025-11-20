@@ -93,8 +93,8 @@ export const JobCard = ({ job, content, isMobile }: JobCardProps) => {
           </CardContent>
         </Card>
       </DialogTrigger>
-      
-      <DialogContent className={`${isMobile ? 'max-w-[95vw] max-h-[90vh]' : 'max-w-2xl max-h-[90vh]'} overflow-y-auto`}>
+
+      <DialogContent className={`${isMobile ? 'max-w-[calc(95vw_-_20px)] max-h-[90vh]' : 'max-w-[652px] max-h-[90vh]'} overflow-y-auto`}>
         <DialogHeader>
           <div className="flex items-center justify-between gap-4 mb-4">
             <div className="flex items-center gap-4">
@@ -135,7 +135,7 @@ export const JobCard = ({ job, content, isMobile }: JobCardProps) => {
             </Dialog>
           </div>
         </DialogHeader>
-        
+
         <div className="space-y-6">
           <div className="grid grid-cols-2 gap-4">
             <div className="flex items-center gap-2">

@@ -112,9 +112,8 @@ const JobFormWizard: React.FC<JobFormWizardProps> = ({ filterConfig, onFinish })
                 {section.items.map(item => (
                   <button
                     key={item.id}
-                    className={`text-left px-5 py-2 text-sm transition-colors duration-150 ${
-                      activeItem === item.id ? 'bg-accent font-semibold border-l-4 border-primary' : 'hover:bg-accent/50'
-                    }`}
+                    className={`text-left px-5 py-2 text-sm transition-colors duration-150 ${activeItem === item.id ? 'bg-accent font-semibold border-l-4 border-primary text-white' : 'hover:bg-accent/50'
+                      }`}
                     onClick={() => handleItemClick(section.id, item.id)}
                   >
                     {item.label}
@@ -143,9 +142,8 @@ const JobFormWizard: React.FC<JobFormWizardProps> = ({ filterConfig, onFinish })
         <Button
           onClick={goBack}
           disabled={currentIndex <= 0}
-          className={`px-6 sm:px-7 md:px-8 py-3 rounded-md text-base sm:text-lg md:text-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
-            currentIndex <= 0 ? 'invisible' : 'visible'
-          }`}
+          className={`px-6 sm:px-7 md:px-8 py-3 rounded-md text-base sm:text-lg md:text-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${currentIndex <= 0 ? 'invisible' : 'visible'
+            }`}
         >
           Back
         </Button>
