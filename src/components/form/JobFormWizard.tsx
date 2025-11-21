@@ -101,7 +101,7 @@ const JobFormWizard: React.FC<JobFormWizardProps> = ({ filterConfig, onFinish })
     <div className="flex flex-col h-screen bg-gray-50 text-gray-900 font-sans">
       <div className="flex flex-1 overflow-hidden">
         {/* This should be visible Floating sidebar with background */}
-        <aside className="fixed left-20 top-20 bottom-4 z-10 w-60 bg-card/95 backdrop-blur-sm border border-border rounded-lg shadow-lg overflow-y-auto">
+        <aside className="fixed left-20 top-20 z-10 w-60 bg-card/95 backdrop-blur-sm border border-border rounded-lg shadow-lg overflow-y-auto max-h-[calc(100vh-160px)]">
           {filterConfig.sections.map(section => (
             <div key={section.id} className="border-b border-border">
               <div className="flex items-center gap-2 px-5 py-4 cursor-default select-none text-gray-600 font-medium text-sm">
@@ -112,8 +112,9 @@ const JobFormWizard: React.FC<JobFormWizardProps> = ({ filterConfig, onFinish })
                 {section.items.map(item => (
                   <button
                     key={item.id}
-                    className={`text-left px-5 py-2 text-sm transition-colors duration-150 ${activeItem === item.id ? 'bg-accent font-semibold border-l-4 border-primary text-white' : 'hover:bg-accent/50'
-                      }`}
+                    className={`text-left px-5 py-2 text-sm transition-colors duration-150 ${
+                      activeItem === item.id ? 'bg-accent font-semibold border-l-4 border-primary' : 'hover:bg-accent/50'
+                    }`}
                     onClick={() => handleItemClick(section.id, item.id)}
                   >
                     {item.label}
@@ -142,8 +143,9 @@ const JobFormWizard: React.FC<JobFormWizardProps> = ({ filterConfig, onFinish })
         <Button
           onClick={goBack}
           disabled={currentIndex <= 0}
-          className={`px-6 sm:px-7 md:px-8 py-3 rounded-md text-base sm:text-lg md:text-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${currentIndex <= 0 ? 'invisible' : 'visible'
-            }`}
+          className={`px-6 sm:px-7 md:px-8 py-3 rounded-md text-base sm:text-lg md:text-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
+            currentIndex <= 0 ? 'invisible' : 'visible'
+          }`}
         >
           Back
         </Button>

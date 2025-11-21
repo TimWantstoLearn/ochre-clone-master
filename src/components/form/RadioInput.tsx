@@ -15,8 +15,9 @@ interface RadioInputProps {
 }
 
 const RadioInput: React.FC<RadioInputProps> = ({ option, checked, onChange, name }) => (
-  <div className={`bg-card border rounded-lg overflow-hidden transition-all ${checked ? 'bg-primary border-primary' : 'border-border hover:border-ring'
-    }`}>
+  <div className={`bg-card border rounded-lg overflow-hidden transition-all ${
+    checked ? 'bg-primary border-primary' : 'border-border hover:border-ring'
+  }`}>
     <Label className="flex items-center p-3 md:p-4 cursor-pointer gap-3">
       <input
         type="radio"
@@ -26,8 +27,9 @@ const RadioInput: React.FC<RadioInputProps> = ({ option, checked, onChange, name
         onChange={() => onChange(option.value)}
         className="w-5 h-5 cursor-pointer"
       />
-      <span className={`flex-1 text-sm select-none ${checked ? 'font-medium text-white' : ''
-        }`}>
+      <span className={`flex-1 text-sm select-none ${
+        checked ? 'font-medium' : ''
+      }`}>
         {option.label}
       </span>
       {checked && (

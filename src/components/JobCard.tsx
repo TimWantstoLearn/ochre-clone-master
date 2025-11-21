@@ -46,10 +46,9 @@ interface JobCardProps {
       qualifications: string;
     };
   };
-  isMobile?: boolean;
 }
 
-export const JobCard = ({ job, content, isMobile }: JobCardProps) => {
+export const JobCard = ({ job, content }: JobCardProps) => {
   const handleApplyClick = () => {
     window.open(job.applicationUrl, '_blank');
   };
@@ -67,22 +66,22 @@ export const JobCard = ({ job, content, isMobile }: JobCardProps) => {
               <div className="flex-1 min-w-0">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
-                    <h3 className={`font-semibold ${isMobile ? 'text-lg' : 'text-xl'} leading-tight mb-1`}>{job.title}</h3>
-                    <p className={`text-muted-foreground ${isMobile ? 'text-sm' : 'text-base'} mb-2`}>{job.company}</p>
-                    <div className={`flex items-center gap-1 ${isMobile ? 'text-xs' : 'text-sm'} text-muted-foreground mb-3`}>
+                    <h3 className="font-semibold text-xl leading-tight mb-1">{job.title}</h3>
+                    <p className="text-muted-foreground text-base mb-2">{job.company}</p>
+                    <div className="flex items-center gap-1 text-sm text-muted-foreground mb-3">
                       <MapPin className="w-4 h-4" />
                       <span>{job.location}</span>
                     </div>
                     <div className="flex flex-wrap gap-2 mb-3">
                       {job.tags.map((tag, index) => (
-                        <Badge key={index} variant="secondary" className={isMobile ? "text-xs px-2 py-1" : "text-xs"}>
+                        <Badge key={index} variant="secondary" className="text-xs">
                           {tag}
                         </Badge>
                       ))}
                     </div>
                   </div>
                   <div className="flex-shrink-0 text-right">
-                    <div className={`flex items-center gap-1 ${isMobile ? 'text-xs' : 'text-sm'} text-muted-foreground`}>
+                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
                       <Calendar className="w-4 h-4" />
                       <span>{job.datePosted}</span>
                     </div>
@@ -93,18 +92,18 @@ export const JobCard = ({ job, content, isMobile }: JobCardProps) => {
           </CardContent>
         </Card>
       </DialogTrigger>
-
-      <DialogContent className={`${isMobile ? 'max-w-[calc(95vw_-_20px)] max-h-[90vh]' : 'max-w-[652px] max-h-[90vh]'} overflow-y-auto`}>
+      
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <div className="flex items-center justify-between gap-4 mb-4">
             <div className="flex items-center gap-4">
-              <Avatar className={`${isMobile ? 'w-12 h-12' : 'w-16 h-16'}`}>
+              <Avatar className="w-16 h-16">
                 <AvatarImage src={job.logo} alt={`${job.company} logo`} />
-                <AvatarFallback className={`${isMobile ? 'text-base' : 'text-lg'}`}>{job.company.charAt(0)}</AvatarFallback>
+                <AvatarFallback className="text-lg">{job.company.charAt(0)}</AvatarFallback>
               </Avatar>
               <div>
-                <DialogTitle className={`${isMobile ? 'text-xl' : 'text-2xl'}`}>{job.title}</DialogTitle>
-                <p className={`text-muted-foreground ${isMobile ? 'text-base' : 'text-lg'}`}>{job.company}</p>
+                <DialogTitle className="text-2xl">{job.title}</DialogTitle>
+                <p className="text-muted-foreground text-lg">{job.company}</p>
               </div>
             </div>
             <Dialog>
@@ -135,7 +134,7 @@ export const JobCard = ({ job, content, isMobile }: JobCardProps) => {
             </Dialog>
           </div>
         </DialogHeader>
-
+        
         <div className="space-y-6">
           <div className="grid grid-cols-2 gap-4">
             <div className="flex items-center gap-2">
@@ -169,19 +168,19 @@ export const JobCard = ({ job, content, isMobile }: JobCardProps) => {
           </div>
 
           <div>
-            <h4 className={`font-semibold ${isMobile ? 'text-base' : 'text-lg'} mb-2`}>{content.sections.aboutCompany}</h4>
+            <h4 className="font-semibold text-lg mb-2">{content.sections.aboutCompany}</h4>
             <p className="text-muted-foreground">{job.companyDescription}</p>
           </div>
 
           <div>
-            <h4 className={`font-semibold ${isMobile ? 'text-base' : 'text-lg'} mb-2`}>{content.sections.jobDescription}</h4>
+            <h4 className="font-semibold text-lg mb-2">{content.sections.jobDescription}</h4>
             <p className="text-muted-foreground">{job.description}</p>
           </div>
 
           <div>
             <div className="flex items-center gap-2 mb-3">
               <Target className="w-5 h-5" />
-              <h4 className={`font-semibold ${isMobile ? 'text-base' : 'text-lg'}`}>{content.sections.strengths}</h4>
+              <h4 className="font-semibold text-lg">{content.sections.strengths}</h4>
             </div>
             <ul className="space-y-2">
               {job.strengths.map((strength, index) => (
@@ -196,7 +195,7 @@ export const JobCard = ({ job, content, isMobile }: JobCardProps) => {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <Gift className="w-5 h-5" />
-              <h4 className={`font-semibold ${isMobile ? 'text-base' : 'text-lg'}`}>{content.sections.benefits}</h4>
+              <h4 className="font-semibold text-lg">{content.sections.benefits}</h4>
             </div>
             <ul className="space-y-2">
               {job.benefits.map((benefit, index) => (
@@ -211,7 +210,7 @@ export const JobCard = ({ job, content, isMobile }: JobCardProps) => {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <Award className="w-5 h-5" />
-              <h4 className={`font-semibold ${isMobile ? 'text-base' : 'text-lg'}`}>{content.sections.qualifications}</h4>
+              <h4 className="font-semibold text-lg">{content.sections.qualifications}</h4>
             </div>
             <ul className="space-y-2">
               {job.qualifications.map((qualification, index) => (

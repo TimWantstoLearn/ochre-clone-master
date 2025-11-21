@@ -8,7 +8,6 @@ import { Label } from "@/components/ui/label";
 import { Check } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useIsMobile } from "@/hooks/use-mobile";
 import pricingContent from "@/content/pricing.json";
 import employerSignupContent from "@/content/employerSignup.json";
 import commonContent from "@/content/common.json";
@@ -16,7 +15,6 @@ import commonContent from "@/content/common.json";
 const Pricing = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
-  const isMobile = useIsMobile();
 
   const handleSignIn = () => {
     setIsModalOpen(true);
@@ -28,10 +26,10 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {!isMobile && <Sidebar content={commonContent.sidebar} />}
-      <Header content={commonContent.header} isMobile={isMobile} />
+      <Sidebar content={commonContent.sidebar} />
+      <Header content={commonContent.header} />
 
-      <main className={`${isMobile ? 'pt-20' : 'ml-16 pt-20'}`}>
+      <main className="ml-16 pt-20">
         <div className="container mx-auto py-12 space-y-12">
           <div className="text-center space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">{pricingContent.hero.title}</h1>
