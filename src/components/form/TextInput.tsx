@@ -8,10 +8,10 @@ interface TextInputProps {
 }
 
 const TextInput: React.FC<TextInputProps> = ({ value, onChange, placeholder }) => (
-  <div className="bg-white border border-input rounded-lg overflow-hidden hover:border-ring transition-all">
+  <div className="bg-card border border-input rounded-lg overflow-hidden hover:border-ring transition-all">
     <Input
       type="text"
-      className="w-full p-3 md:p-4 text-sm focus:outline-none focus:ring-2 focus:ring-ring bg-transparent border-0"
+      className="w-full p-3 md:p-4 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
       value={value}
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}

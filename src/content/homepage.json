@@ -13,12 +13,10 @@
     "buttonText": "Post a Job"
   },
   "searchBar": {
-    "jobLabel": "Job Title/Company",
-    "locationLabel": "Location",
-    "jobPlaceholder": "Enter job title, keywords, or company",
-    "locationPlaceholder": "Enter location",
-    "searchButtonText": "Search Now",
-    "helperText": "Press Enter or click Search Now to find jobs",
+    "jobPlaceholder": "Job title, keywords, or company",
+    "locationPlaceholder": "Location",
+    "searchButtonText": "Search",
+    "helperText": "Press Enter or click Search to find jobs",
     "jobQueryMaxLength": 200,
     "locationMaxLength": 100,
     "toasts": {

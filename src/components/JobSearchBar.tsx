@@ -8,8 +8,6 @@ import { useToast } from "@/hooks/use-toast";
 interface JobSearchBarProps {
   onSearch: (query: string, location: string) => void;
   content: {
-    jobLabel?: string;
-    locationLabel?: string;
     jobPlaceholder: string;
     locationPlaceholder: string;
     searchButtonText: string;
@@ -30,10 +28,9 @@ interface JobSearchBarProps {
       locationMaxError: string;
     };
   };
-  isMobile?: boolean;
 }
 
-export const JobSearchBar = ({ onSearch, content, isMobile }: JobSearchBarProps) => {
+export const JobSearchBar = ({ onSearch, content }: JobSearchBarProps) => {
   const [jobQuery, setJobQuery] = useState("");
   const [location, setLocation] = useState("");
   const { toast } = useToast();
@@ -75,93 +72,48 @@ export const JobSearchBar = ({ onSearch, content, isMobile }: JobSearchBarProps)
   };
 
   return (
-    <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="w-full max-w-4xl mx-auto px-4" role="search" aria-label="Job search">
-      {isMobile ? (
-        <div className="space-y-3">
-          <div>
-            <label htmlFor="job-query" className="block text-sm font-medium text-foreground mb-1">
-              {content.jobLabel || "Job Title/Company"}
-            </label>
-            <Input
-              id="job-query"
-              type="text"
-              placeholder={content.jobPlaceholder}
-              value={jobQuery}
-              onChange={(e) => setJobQuery(e.target.value)}
-              onKeyPress={handleKeyPress}
-              maxLength={content.jobQueryMaxLength}
-              className="w-full h-12 text-base border border-border rounded-lg focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-0"
-              aria-describedby="job-query-help"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="location" className="block text-sm font-medium text-foreground mb-1">
-              {content.locationLabel || "Location"}
-            </label>
-            <Input
-              id="location"
-              type="text"
-              placeholder={content.locationPlaceholder}
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-              onKeyPress={handleKeyPress}
-              maxLength={content.locationMaxLength}
-              className="w-full h-12 text-base border border-border rounded-lg focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-0"
-              aria-describedby="location-help"
-            />
-          </div>
-
-          <Button
-            type="submit"
-            className="w-full h-12 text-base font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-          >
-            {content.searchButtonText}
-          </Button>
-
-          <p id="job-query-help" className="text-xs text-muted-foreground text-center">
-            {content.helperText}
-          </p>
+    <div className="w-full max-w-4xl mx-auto px-4">
+      <div className="bg-card rounded-2xl shadow-lg border border-border p-2 flex flex-col md:flex-row gap-2">
+        <div className="flex-1 relative">
+          <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
+          <Input
+            type="text"
+            placeholder={content.jobPlaceholder}
+            value={jobQuery}
+            onChange={(e) => setJobQuery(e.target.value)}
+            onKeyPress={handleKeyPress}
+            maxLength={content.jobQueryMaxLength}
+            className="pl-12 h-14 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-base"
+          />
         </div>
-      ) : (
-        <div className="bg-card rounded-2xl shadow-lg border border-border p-2 flex flex-row gap-2">
-          <div className="flex-1 relative">
-            <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
-            <Input
-              type="text"
-              placeholder={content.jobPlaceholder}
-              value={jobQuery}
-              onChange={(e) => setJobQuery(e.target.value)}
-              onKeyPress={handleKeyPress}
-              maxLength={content.jobQueryMaxLength}
-              className="pl-12 h-14 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-base"
-            />
-          </div>
 
-          <div className="w-px bg-border self-stretch my-2" />
+        <div className="hidden md:block w-px bg-border self-stretch my-2" />
 
-          <div className="flex-1 relative">
-            <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
-            <Input
-              type="text"
-              placeholder={content.locationPlaceholder}
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-              onKeyPress={handleKeyPress}
-              maxLength={content.locationMaxLength}
-              className="pl-12 h-14 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-base"
-            />
-          </div>
-
-          <Button
-            onClick={handleSearch}
-            className="h-14 px-8 text-base font-semibold bg-accent hover:bg-accent/90 text-accent-foreground rounded-xl transition-all hover:scale-105"
-          >
-            <Search className="w-5 h-5 mr-2" />
-            {content.searchButtonText}
-          </Button>
+        <div className="flex-1 relative">
+          <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
+          <Input
+            type="text"
+            placeholder={content.locationPlaceholder}
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            onKeyPress={handleKeyPress}
+            maxLength={content.locationMaxLength}
+            className="pl-12 h-14 border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-base"
+          />
         </div>
-      )}
-    </form>
+
+        <Button
+          onClick={handleSearch}
+          className="h-14 px-8 text-base font-semibold bg-accent hover:bg-accent/90 text-accent-foreground rounded-xl transition-all hover:scale-105"
+        >
+          <Search className="w-5 h-5 mr-2" />
+          {content.searchButtonText}
+        </Button>
+      </div>
+
+      <p className="text-xs text-muted-foreground text-center mt-3">
+        {content.helperText}
+      </p>
+    </div>
   );
 };

@@ -8,9 +8,9 @@ interface TextAreaInputProps {
 }
 
 const TextAreaInput: React.FC<TextAreaInputProps> = ({ value, onChange, placeholder }) => (
-  <div className="bg-white border border-input rounded-lg overflow-hidden hover:border-ring transition-all">
+  <div className="bg-card border border-input rounded-lg overflow-hidden hover:border-ring transition-all">
     <Textarea
-      className="w-full p-3 md:p-4 text-sm focus:outline-none focus:ring-2 focus:ring-ring min-h-24 md:min-h-32 resize-y bg-transparent border-0"
+      className="w-full p-3 md:p-4 text-sm focus:outline-none focus:ring-2 focus:ring-ring min-h-24 md:min-h-32 resize-y"
       value={value}
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}

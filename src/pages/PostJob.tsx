@@ -8,7 +8,6 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageBreadcrumb } from "@/components/Breadcrumb";
 import { useNavigate } from "react-router-dom";
-import { useIsMobile } from "@/hooks/use-mobile";
 import postJobContent from "@/content/postJob.json";
 import commonContent from "@/content/common.json";
 import JobFormWizard from "@/components/form/JobFormWizard";
@@ -16,7 +15,6 @@ import { filterConfig } from "@/components/form/filterConfig";
 
 const PostJob = () => {
   const navigate = useNavigate();
-  const isMobile = useIsMobile();
 
   const handleWizardFinish = (wizardFormValues: { [key: string]: { selected?: string | string[]; value?: string; file?: File | null } }) => {
     console.log("Wizard form values:", wizardFormValues);
@@ -42,9 +40,9 @@ const PostJob = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {!isMobile && <Sidebar content={commonContent.sidebar} />}
-      <Header content={commonContent.header} isMobile={isMobile} />
-      <main className={`${isMobile ? 'pt-20' : 'ml-16 pt-20'}`}>
+      <Sidebar content={commonContent.sidebar} />
+      <Header content={commonContent.header} />
+      <main className="ml-16 pt-20">
         <JobFormWizard filterConfig={filterConfig} onFinish={handleWizardFinish} />
       </main>
     </div>
