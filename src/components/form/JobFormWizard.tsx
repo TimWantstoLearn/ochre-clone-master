@@ -101,7 +101,7 @@ const JobFormWizard: React.FC<JobFormWizardProps> = ({ filterConfig, onFinish })
     <div className="flex flex-col h-screen bg-gray-50 text-gray-900 font-sans">
       <div className="flex flex-1 overflow-hidden">
         {/* This should be visible Floating sidebar with background */}
-        <aside className="fixed left-20 top-20 z-10 w-60 bg-card/95 backdrop-blur-sm border border-border rounded-lg shadow-lg overflow-y-auto max-h-[calc(100vh-160px)]">
+        <aside className="fixed left-20 top-20 bottom-4 z-10 w-60 bg-card/95 backdrop-blur-sm border border-border rounded-lg shadow-lg overflow-y-auto">
           {filterConfig.sections.map(section => (
             <div key={section.id} className="border-b border-border">
               <div className="flex items-center gap-2 px-5 py-4 cursor-default select-none text-gray-600 font-medium text-sm">
