@@ -14,43 +14,45 @@ interface HeaderProps {
 
 export const Header = ({ content, isMobile, isLandingPage }: HeaderProps) => {
   return (
-    <header className={`fixed top-0 ${isMobile ? 'left-0 right-0' : 'right-0 left-16'} h-20 flex items-center ${isMobile && isLandingPage ? 'justify-end' : 'justify-between'} px-8 z-40 bg-background/80 backdrop-blur-sm`}>
-      {isMobile && isLandingPage ? (
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="h-10 w-10">
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Open menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-80">
-            <div className="flex flex-col space-y-4 mt-8">
-              <Button asChild variant="ghost" className="justify-start">
-                <Link to="/companies">Explore Companies</Link>
+    <header className={`fixed top-0 ${isMobile ? 'left-0 right-0' : 'right-0 left-16'} h-20 flex items-center justify-between px-8 z-40 bg-background/80 backdrop-blur-sm`}>
+      <div className="flex items-center">
+        {isLandingPage ? (
+          <Link to="/">
+            <img src="/Christian-Job-Hub.svg" alt="Christian Job Hub" className="h-12 w-auto" />
+          </Link>
+        ) : (
+          <PageBreadcrumb />
+        )}
+      </div>
+      <div className="flex items-center gap-2">
+        {isMobile && isLandingPage ? (
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="h-10 w-10">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Open menu</span>
               </Button>
-              <Button asChild variant="ghost" className="justify-start">
-                <Link to="/pricing">Post a Job</Link>
-              </Button>
-              <Button asChild variant="ghost" className="justify-start">
-                <Link to="/add-ons">Add-Ons</Link>
-              </Button>
-            </div>
-          </SheetContent>
-        </Sheet>
-      ) : (
-        <>
-          <div className="flex items-center">
-            {!isLandingPage && <PageBreadcrumb />}
-          </div>
-          {!isMobile && (
-            <div className="flex items-center gap-2">
-              <Button asChild>
-                <Link to="/pricing">Post a Job</Link>
-              </Button>
-            </div>
-          )}
-        </>
-      )}
+            </SheetTrigger>
+            <SheetContent side="right" className="w-80">
+              <div className="flex flex-col space-y-4 mt-8">
+                <Button asChild variant="ghost" className="justify-start">
+                  <Link to="/companies">Explore Companies</Link>
+                </Button>
+                <Button asChild variant="ghost" className="justify-start">
+                  <Link to="/pricing">Post a Job</Link>
+                </Button>
+                <Button asChild variant="ghost" className="justify-start">
+                  <Link to="/add-ons">Add-Ons</Link>
+                </Button>
+              </div>
+            </SheetContent>
+          </Sheet>
+        ) : !isMobile ? (
+          <Button asChild>
+            <Link to="/pricing">Post a Job</Link>
+          </Button>
+        ) : null}
+      </div>
     </header>
   );
 };
