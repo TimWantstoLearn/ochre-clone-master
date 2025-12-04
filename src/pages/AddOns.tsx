@@ -79,7 +79,7 @@ const AddOns = () => {
       <Header content={commonContent.header} isMobile={isMobile} />
 
       <main className={`${isMobile ? 'pt-20' : 'ml-16 pt-20'}`}>
-        <div className="container mx-auto py-12 space-y-12">
+        <div className="container mx-auto py-5 space-y-4">
           <div className="text-center space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">{addOnsContent.hero.title}</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -191,6 +191,17 @@ const AddOns = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          <div className="max-w-7xl mx-auto mt-6">
+            <Button
+              className="w-full"
+              variant="outline"
+              size="lg"
+              onClick={() => navigate('/post-job')}
+            >
+              Skip, continue to Job Form
+            </Button>
           </div>
 
           {selectedAddOns.length > 0 && (
